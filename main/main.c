@@ -47,7 +47,7 @@ void trigger_task(void *p) {
 
     while (1) {
         gpio_put(PINX, 1);
-        sleep_us(10);
+        vTaskDelay(pdMS_TO_TICKS(10));
         gpio_put(PINX, 0);
 
         xSemaphoreGive(xSemaphoreTrigger); // sinaliza q o pulso foi enviado 
